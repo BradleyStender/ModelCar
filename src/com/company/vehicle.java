@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class vehicle {
+public abstract class vehicle extends MainMenu {
 
     private int year;
     private String make;

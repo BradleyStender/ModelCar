@@ -7,10 +7,12 @@ import static com.company.Main.mainMenu;
 
 public class Car extends vehicle {
 
+
     private Scanner input = new Scanner(System.in);
 
     private int speed = 0;
     private int gas = 0;
+
 
     public Car() {
         setMake();
@@ -57,6 +59,8 @@ public class Car extends vehicle {
 
     public int getGas() {
         return gas;
+
+
     }
 
     public void setGas(int gas) {
@@ -71,11 +75,21 @@ public class Car extends vehicle {
 
         for (int seconds = 0; seconds <= 5; seconds++) {
 
-            car.setSpeed(car.getSpeed() + 10);
-            car.setGas(car.getGas() - 1);
-            System.out.println("The " + car.getMake() + " " + car.getModel() + " is going " + car.getSpeed() + " MPH and has " + car.getGas() + "% of its gas left");
+            if (getGas() > 0) {
+                car.setSpeed(car.getSpeed() + 10);
+                car.setGas(car.getGas() - 1);
+                System.out.println("The " + car.getMake() + " " + car.getModel() + " is going " + car.getSpeed() + " MPH and has " + car.getGas() + "% of its gas left");
+
+            } else {
+                MainMenu menu = new MainMenu();
+                System.out.println("You have ran out of gas. the vehicle has stopped moving.");
+                System.out.println("Returning to main menu.");
+                menu.createCar();
+            }
+
 
         }
+
 
         mainMenu.menu(car);
 
@@ -89,6 +103,18 @@ public class Car extends vehicle {
             car.setSpeed(car.getSpeed() - 10);
             car.setGas(car.getGas() - 1);
             System.out.println("The " + car.getMake() + " " + car.getModel() + " is going " + car.getSpeed() + " MPH and has " + car.getGas() + "%of its gas left");
+
+            if (getGas() > 0) {
+                car.setSpeed(car.getSpeed() + 10);
+                car.setGas(car.getGas() - 1);
+                System.out.println("The " + car.getMake() + " " + car.getModel() + " is going " + car.getSpeed() + " MPH and has " + car.getGas() + "% of its gas left");
+
+            } else  {
+                MainMenu menu = new MainMenu();
+                System.out.println("You have ran out of gas. the vehicle has stopped moving.");
+                System.out.println("Returning to main menu.");
+                menu.createCar();
+            }
 
         }
 

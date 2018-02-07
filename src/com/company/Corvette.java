@@ -23,7 +23,7 @@ public class Corvette extends Car {
     }
     protected void getCorvetteInfo(){
 
-       // System.out.println("You are driving a " + getColor() + " " + " " + getMake() + " " + getModel() + ". It is going " + getSpeed() + " MPH and has" + getGas() + "% of gas left.");
+        System.out.println("You are driving a " + getColor() + " " + " " + getMake() + " " + getModel() + ". It is going " + getSpeed() + " MPH and has" + getGas() + "% of gas left.");
 
     }
 

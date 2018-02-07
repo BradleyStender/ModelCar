@@ -8,7 +8,7 @@ public class MainMenu {
     private Scanner input = new Scanner(System.in);
 
 
-    protected void createCar() {
+    public void createCar() {
 
         System.out.println("What kind of car would you like to have?");
         System.out.println("1. Custom \n2. Pre-built car \n3. Exit");
@@ -81,6 +81,8 @@ public class MainMenu {
 
     public void menu(Car car) {
 
+
+
         System.out.println("What would you like to do with the " + car.getMake() + " " + car.getModel() + "?");
         System.out.println("1. Accelerate \n2. Decelerate \n3. Fill up with gas \n4. Exit ");
 
@@ -107,6 +109,11 @@ public class MainMenu {
             System.out.println("Please enter a number between 1 and 4.");
             menu(car);
         }
+
+
+
+
+
     }
 
 }
