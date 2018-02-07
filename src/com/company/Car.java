@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import static com.company.Main.mainMenu;
 
-public class Car extends  vehicle {
+public class Car extends vehicle {
 
     private Scanner input = new Scanner(System.in);
 
@@ -20,7 +20,11 @@ public class Car extends  vehicle {
         setGas(100);
     }
 
-    public int getYear() {
+    public Car(int year, String make, String model, int speed, int gas) {
+        super(year, make, model);
+        this.input = input;
+        this.speed = speed;
+        this.gas = gas;
     }
 
     public void setYear() {
@@ -33,16 +37,9 @@ public class Car extends  vehicle {
         }
     }
 
-    public String getMake() {
-    }
-
     public void setMake() {
         System.out.println("What is the make of the car you would like to create?");
         super.setMake(input.nextLine());
-    }
-
-    public String getModel() {
-        return model;
     }
 
     public void setModel() {
@@ -83,10 +80,9 @@ public class Car extends  vehicle {
         mainMenu.menu(car);
 
 
-
     }
 
-    public void slowDown(Car car){
+    public void slowDown(Car car) {
 
         for (int seconds = 0; seconds <= 5; seconds++) {
 
@@ -97,13 +93,13 @@ public class Car extends  vehicle {
         }
 
         mainMenu.menu(car);
-        }
+    }
 
-        public  void addGas(Car car){
+    public void addGas(Car car) {
         car.setGas(100);
         System.out.println("Your " + car.getMake() + " " + car.getModel() + " now has a full tank!");
         mainMenu.menu(car);
-        }
+    }
 
 
 }
